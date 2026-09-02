@@ -1,5 +1,3 @@
-Si tu parles du **projet C “Student Manager”**, voici le récapitulatif complet qu’on s’était fixé.
-
 ## 🎓 Projet : Student Manager
 
 Objectif : créer un programme C permettant de gérer une liste d'étudiants stockée dans un fichier.
@@ -158,9 +156,3 @@ Une fois le projet fonctionnel :
 - tester avec Valgrind/AddressSanitizer
 - mesurer la complexité des algorithmes
 - éventuellement remplacer le tableau dynamique par une **liste chaînée**
-
-### Les notions que le projet doit te faire travailler
-
-**C de base → fonctions → tableaux → pointeurs → `struct` → `malloc/free` → `realloc` → chaînes → fichiers → parsing → `argc/argv` → Makefile → algorithmes → complexité → gestion mémoire → debugging.**
-
-Je te conseille de le faire **sans que je te donne le code complet** : tu m'envoies chaque partie quand tu l'as faite, et je te corrige comme un prof Epitech en te laissant chercher les erreurs.
