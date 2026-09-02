@@ -4,8 +4,6 @@
 
 int main()
 {
-    int note = 10;
-
     Student student;
 
     student.id = 1;
