@@ -11,5 +11,6 @@ typedef struct
 } Student;
 
 int note_add(int note_choose);
+void print_student(Student student);
 
 #endif
