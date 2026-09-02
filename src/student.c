@@ -2,13 +2,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int note_add(int note_choose)
-{
-    note_choose += 5;
-
-    return note_choose;
-}
-
 void print_student(Student student)
 {
     printf("Student : \n");
@@ -17,4 +10,10 @@ void print_student(Student student)
     printf("\tNom : %s\n", student.last_name);
     printf("\tAge : %d\n", student.age);
     printf("\tNote Moyenne : %.2f\n", student.average);
+}
+
+Student *malloc_student(int size)
+{
+    Student *mem_al = malloc(size * sizeof(Student));
+    return mem_al;
 }
