@@ -13,5 +13,6 @@ int main()
     student.average = 15.7;
 
     print_student(student);
-    system("PAUSE");
+
+    Student *students;
 }
