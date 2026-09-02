@@ -14,7 +14,6 @@ int main()
     student.age = 15;
     student.average = 15.7;
 
-    note = note_add(note);
-    printf("%d", note);
+    print_student(student);
     system("PAUSE");
 }
