@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int note(int note_choose)
+int note_add(int note_choose)
 {
     note_choose += 5;
 

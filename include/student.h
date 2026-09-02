@@ -1,6 +1,6 @@
 #ifndef STUDENT_H
 #define STUDENT_H
 
-int note(int note_choose);
+int note_add(int note_choose);
 
 #endif
