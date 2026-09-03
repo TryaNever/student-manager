@@ -21,9 +21,13 @@ Student *malloc_student(int size)
     return mem_al;
 }
 
-Student *realloc_student(Student *students)
+Student *realloc_student(Student *students, int size)
 {
-    Student *mem_al = realloc(students, sizeof(Student));
+    Student *mem_al = realloc(students, size * sizeof(Student));
+    if (!mem_al && size)
+    {
+        printf("Cannot add %d bytes to allocation", size * sizeof(Student));
+    }
     return mem_al;
 }
 
