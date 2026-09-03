@@ -12,7 +12,7 @@ void print_student(Student student)
     printf("\tNote Moyenne : %.2f\n", student.average);
 }
 
-Student add_student(Student student, Student *students)
+Student add_student(Student student, Student *students, int count_student)
 {
 }
 
