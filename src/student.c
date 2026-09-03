@@ -12,6 +12,10 @@ void print_student(Student student)
     printf("\tNote Moyenne : %.2f\n", student.average);
 }
 
+Student add_student(Student student, Student *students)
+{
+}
+
 Student *malloc_student(int size)
 {
     Student *mem_al = malloc(size * sizeof(Student));
