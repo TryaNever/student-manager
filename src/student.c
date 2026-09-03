@@ -21,6 +21,12 @@ Student *malloc_student(int size)
     return mem_al;
 }
 
+Student *realloc_student(Student *students)
+{
+    Student *mem_al = realloc(students, sizeof(Student));
+    return mem_al;
+}
+
 void free_student(Student *malloc_student)
 {
     free(malloc_student);
