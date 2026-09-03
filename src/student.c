@@ -15,5 +15,13 @@ void print_student(Student student)
 Student *malloc_student(int size)
 {
     Student *mem_al = malloc(size * sizeof(Student));
+
+    if (!mem_al && size)
+        printf("Cannot allocate %d bytes", size);
     return mem_al;
+}
+
+void free_student(Student *malloc_student)
+{
+    free(malloc_student);
 }
