@@ -12,11 +12,11 @@ void print_student(Student student)
     printf("\tNote Moyenne : %.2f\n", student.average);
 }
 
-void print_array_student(Student **student, int count_student)
+void print_array_student(Student *student, int count_student)
 {
     for (int i = 0; i < count_student; i++)
     {
-        print_student(*student[i]);
+        print_student(student[i]);
     }
 }
 
@@ -40,7 +40,7 @@ Student *malloc_student(int size)
     Student *mem_al = malloc(size * sizeof(Student));
 
     if (!mem_al && size)
-        printf("Cannot allocate %d bytes", size);
+        printf("Cannot allocate %llu bytes", size * sizeof(Student));
     return mem_al;
 }
 
@@ -49,7 +49,7 @@ Student *realloc_student(Student *students, int size)
     Student *mem_al = realloc(students, size * sizeof(Student));
     if (!mem_al && size)
     {
-        printf("Cannot add %d bytes to allocation", size * sizeof(Student));
+        printf("Cannot add %llu bytes to allocation", size * sizeof(Student));
     }
     return mem_al;
 }
