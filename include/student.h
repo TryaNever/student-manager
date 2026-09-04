@@ -10,7 +10,9 @@ typedef struct
     float average;
 } Student;
 
-int note_add(int note_choose);
 void print_student(Student student);
-
+void add_student(Student student, Student **students, int *count_student);
+Student *malloc_student(int size);
+Student *realloc_student(Student *students, int size);
+void free_student(Student *malloc_student);
 #endif
