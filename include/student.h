@@ -15,4 +15,5 @@ void add_student(Student student, Student **students, int *count_student);
 Student *malloc_student(int size);
 Student *realloc_student(Student *students, int size);
 void free_student(Student *malloc_student);
+void print_array_student(Student *student, int count_student);
 #endif
