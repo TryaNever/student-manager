@@ -12,6 +12,14 @@ void print_student(Student student)
     printf("\tNote Moyenne : %.2f\n", student.average);
 }
 
+void print_array_student(Student **student, int count_student)
+{
+    for (int i = 0; i < count_student; i++)
+    {
+        print_student(*student[i]);
+    }
+}
+
 void add_student(Student student, Student **students, int *count_student)
 {
     Student *new_students;
