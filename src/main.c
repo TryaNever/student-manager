@@ -15,4 +15,14 @@ int main()
     print_student(student);
 
     Student *students;
+
+    students = malloc_student(3);
+
+    students[0] = student;
+    students[1] = student;
+    students[2] = student;
+    print_array_student(students, 3);
+    free_student(students);
+    system("PAUSE");
+    return 0;
 }
