@@ -35,6 +35,10 @@ void add_student(Student student, Student **students, int *count_student)
     (*count_student)++;
 }
 
+Student remove_student(int id_student, Student **students, int *count_student)
+{
+}
+
 Student *malloc_student(int size)
 {
     Student *mem_al = malloc(size * sizeof(Student));
