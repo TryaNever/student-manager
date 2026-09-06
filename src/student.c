@@ -49,7 +49,7 @@ void remove_student(int id_student, Student **students, int *count_student)
             index_new_student++;
         }
     }
-    free_student(students);
+    free_student(*students);
 
     *students = new_students;
     (*count_student)--;
