@@ -38,20 +38,21 @@ void add_student(Student student, Student **students, int *count_student)
 void remove_student(int id_student, Student **students, int *count_student)
 {
     Student *new_students;
+    int index_new_student = 0;
 
     new_students = malloc_student(*count_student - 1);
-    for (int *i = 0, index_new_student = 0; &i < &count_student; i++)
+    for (int i = 0; i < *count_student; i++)
     {
-        if (students[*i]->id != id_student)
+        if ((*students)[i].id != id_student)
         {
-            new_students[index_new_student] = *students[*i];
+            new_students[index_new_student] = (*students)[i];
             index_new_student++;
         }
     }
-    students = realloc(students, *count_student - 1);
+    free_student(students);
 
     *students = new_students;
-    free_student(new_students);
+    (*count_student)--;
 }
 
 Student *malloc_student(int size)
