@@ -5,6 +5,7 @@
 int main()
 {
     Student student;
+    int count_student = 0;
 
     student.id = 1;
     student.first_name = "test";
@@ -23,9 +24,10 @@ int main()
     students[1] = student;
     student.id = 3;
     students[2] = student;
-    print_array_student(students, 3);
-    remove_student(2,students,3);
-    print_array_student(students, 3);
+    count_student = 3;
+    print_array_student(students, count_student);
+    remove_student(2,&students,&count_student);
+    print_array_student(students, count_student);
 
     free_student(students);
     system("PAUSE");
