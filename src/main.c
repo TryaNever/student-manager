@@ -19,9 +19,14 @@ int main()
     students = malloc_student(3);
 
     students[0] = student;
+    student.id = 2;
     students[1] = student;
+    student.id = 3;
     students[2] = student;
     print_array_student(students, 3);
+    remove_student(2,students,3);
+    print_array_student(students, 3);
+
     free_student(students);
     system("PAUSE");
     return 0;
