@@ -3,7 +3,6 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 CPPFLAGS = -Iinclude
 
-# Sous Windows, on ajoute l'extension .exe
 TARGET = student_manager.exe
 
 SRC = $(wildcard src/*.c)
@@ -18,9 +17,9 @@ $(TARGET): $(OBJ)
 	$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
 
 clean:
-	@if exist "src\*.o" powershell -Command "Remove-Item -Force src/*.o"
+	rm -f src/*.o
 
 fclean: clean
-	@if exist $(TARGET) powershell -Command "Remove-Item -Force $(TARGET)"
+	rm -f $(TARGET)
 
 re: fclean all
