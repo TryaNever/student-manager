@@ -1,12 +1,14 @@
-#include "saver.h"
 #include "student.h"
+#include "saver.h"
 #include <stdlib.h>
 #include <stdio.h>
 
 int write_into_file(char *name_file, Student student)
 {
     FILE *fp;
-    fp = fopen("test.txt", "w");
+    fp = fopen(name_file, "w");
+
+    print_student(student);
 
     if (fp == NULL)
     {
@@ -19,4 +21,5 @@ int write_into_file(char *name_file, Student student)
     fclose(fp);
 
     printf("Fichier créé avec succès.\n");
+    return 0;
 }
