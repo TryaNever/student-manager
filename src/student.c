@@ -33,15 +33,22 @@ void add_student(Student student, Student **students, int *count_student)
     (*count_student)++;
 }
 
-char destructure_student_into_txt(Student *students, int *count_student)
+char *destructure_student_into_txt(Student *students, int *count_student)
 {
-    int nb_ctr = 0;
     char *data;
-    for (int i = 0; i < count_student; i++)
+    for (int i = 0; i < *count_student; i++)
     {
         char *ligne = NULL;
-        int resultat = asprintf(&ligne, "%d;%s;%s;%d;%.2f\n", students[i].id, students[i].first_name, students[i].last_name, students[i].age, students[i].average);
-        strcat(data,ligne);
+        int taille_ligne = snprintf(NULL, 0, "%d;%s;%s;%d;%.2f\n", students[i].id, students[i].first_name, students[i].last_name, students[i].age, students[i].average);
+
+        snprintf(ligne, taille_ligne + 1, "%d;%s;%s;%d;%.2f\n", students[i].id, students[i].first_name, students[i].last_name, students[i].age, students[i].average);
+        system("PAUSE");
+
+        char *temp = malloc( strlen(data) + strlen(ligne) + 1);
+
+        data = temp;
+        strcat(data, ligne);
+        free(ligne);
     }
     return data;
 }
@@ -78,6 +85,8 @@ Student *malloc_student(int size)
 Student *realloc_student(Student *students, int size)
 {
     Student *mem_al = realloc(students, size * sizeof(Student));
+    system("PAUSE");
+
     if (!mem_al && size)
     {
         printf("Cannot add %llu bytes to allocation", size * sizeof(Student));
