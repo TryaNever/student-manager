@@ -1,6 +1,4 @@
 #include "student.h"
-#include <stdlib.h>
-#include <stdio.h>
 
 void print_student(Student student)
 {
@@ -33,6 +31,19 @@ void add_student(Student student, Student **students, int *count_student)
 
     (*students)[*count_student] = student;
     (*count_student)++;
+}
+
+char destructure_student_into_txt(Student *students, int *count_student)
+{
+    int nb_ctr = 0;
+    char *data;
+    for (int i = 0; i < count_student; i++)
+    {
+        char *ligne = NULL;
+        int resultat = asprintf(&ligne, "%d;%s;%s;%d;%.2f\n", students[i].id, students[i].first_name, students[i].last_name, students[i].age, students[i].average);
+        strcat(data,ligne);
+    }
+    return data;
 }
 
 void remove_student(int id_student, Student **students, int *count_student)

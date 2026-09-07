@@ -3,12 +3,11 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int write_into_file(char *name_file, Student student)
+int write_into_file(char *name_file, char *text)
 {
     FILE *fp;
     fp = fopen(name_file, "w");
 
-    print_student(student);
 
     if (fp == NULL)
     {
@@ -16,7 +15,7 @@ int write_into_file(char *name_file, Student student)
         return 1;
     }
 
-    fprintf(fp, "Bonjour, ceci est un test.\n");
+    fprintf(fp, text);
 
     fclose(fp);
 

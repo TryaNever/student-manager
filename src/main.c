@@ -29,7 +29,7 @@ int main()
     print_array_student(students, count_student);
     remove_student(2, &students, &count_student);
     print_array_student(students, count_student);
-    write_into_file("test.txt", student);
+    write_into_file("test.txt", destructure_student_into_txt(students,&count_student));
     free_student(students);
     system("PAUSE");
     return 0;
