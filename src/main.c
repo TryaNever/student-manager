@@ -26,7 +26,7 @@ int main()
     students[2] = student;
     count_student = 3;
     print_array_student(students, count_student);
-    remove_student(2,&students,&count_student);
+    remove_student(2, &students, &count_student);
     print_array_student(students, count_student);
 
     free_student(students);

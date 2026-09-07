@@ -24,7 +24,7 @@ void add_student(Student student, Student **students, int *count_student)
 {
     Student *new_students;
 
-    new_students = realloc(*students, (*count_student + 1) * sizeof(Student));
+    new_students = realloc(*students, (*count_student + 1));
 
     if (new_students == NULL)
         return;
