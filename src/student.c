@@ -22,7 +22,7 @@ void add_student(Student student, Student **students, int *count_student)
 {
     Student *new_students;
 
-    new_students = realloc(*students, (*count_student + 1));
+    new_students = realloc_student(*students, (*count_student + 1));
 
     if (new_students == NULL)
         return;
@@ -35,18 +35,22 @@ void add_student(Student student, Student **students, int *count_student)
 
 char *destructure_student_into_txt(Student *students, int *count_student)
 {
-    char *data;
+    char *data = NULL;
     for (int i = 0; i < *count_student; i++)
     {
-        char *ligne = NULL;
         int taille_ligne = snprintf(NULL, 0, "%d;%s;%s;%d;%.2f\n", students[i].id, students[i].first_name, students[i].last_name, students[i].age, students[i].average);
+        char *ligne = malloc(taille_ligne + 1);
 
         snprintf(ligne, taille_ligne + 1, "%d;%s;%s;%d;%.2f\n", students[i].id, students[i].first_name, students[i].last_name, students[i].age, students[i].average);
-        system("PAUSE");
 
-        char *temp = malloc( strlen(data) + strlen(ligne) + 1);
+        size_t taille_actuelle = data ? strlen(data) : 0;
+        char *temp = realloc(data, taille_actuelle + taille_ligne + 1);
+        if (temp == NULL)
+            return NULL;
 
         data = temp;
+
+
         strcat(data, ligne);
         free(ligne);
     }
@@ -85,7 +89,6 @@ Student *malloc_student(int size)
 Student *realloc_student(Student *students, int size)
 {
     Student *mem_al = realloc(students, size * sizeof(Student));
-    system("PAUSE");
 
     if (!mem_al && size)
     {
