@@ -14,8 +14,6 @@ int main()
     student.age = 15;
     student.average = 15.7;
 
-    print_student(student);
-
     Student *students;
 
     students = malloc_student(3);
@@ -26,7 +24,6 @@ int main()
     student.id = 3;
     students[2] = student;
     count_student = 3;
-    print_array_student(students, count_student);
 
     remove_student(2, &students, &count_student);
     print_array_student(students, count_student);
@@ -34,6 +31,8 @@ int main()
 
     write_into_file("testessss.txt", text);
     free_student(students);
+
+    get_text_file("testessss.txt");
     system("PAUSE");
     return 0;
 }
