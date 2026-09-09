@@ -51,8 +51,7 @@ char *destructure_student_into_txt(Student *students, int *count_student)
             students[i].first_name,
             students[i].last_name,
             students[i].age,
-            students[i].average
-        );
+            students[i].average);
         char *ligne = malloc(taille_ligne + 1);
 
         if (ligne == NULL)
@@ -68,14 +67,12 @@ char *destructure_student_into_txt(Student *students, int *count_student)
             students[i].first_name,
             students[i].last_name,
             students[i].age,
-            students[i].average
-        );
+            students[i].average);
         size_t taille_actuelle = strlen(data);
 
         char *temp = realloc(
             data,
-            taille_actuelle + taille_ligne + 1
-        );
+            taille_actuelle + taille_ligne + 1);
 
         if (temp == NULL)
         {
@@ -90,6 +87,25 @@ char *destructure_student_into_txt(Student *students, int *count_student)
         free(ligne);
     }
     return data;
+}
+
+void *construct_student_from_txt(Student *students, int *count_student, char *file_name)
+{
+    char *text = get_text_file(file_name);
+    char **tokens;
+
+    tokens = str_split(text, ',');
+
+    if (tokens)
+    {
+        for (int i = 0; *(tokens + i); i++)
+        {
+            Student student;
+
+            
+            add_student(student, students):
+        }
+    }
 }
 
 void remove_student(int id_student, Student **students, int *count_student)

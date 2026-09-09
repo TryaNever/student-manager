@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include "saver.h"
 
 typedef struct
 {
@@ -22,4 +23,5 @@ Student *realloc_student(Student *students, int size);
 void free_student(Student *malloc_student);
 void print_array_student(Student *student, int count_student);
 char *destructure_student_into_txt(Student *students, int *count_student);
+void *construct_student_from_txt(Student *students, char *file_name);
 #endif
