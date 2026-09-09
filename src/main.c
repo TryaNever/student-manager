@@ -31,9 +31,8 @@ int main()
     remove_student(2, &students, &count_student);
     print_array_student(students, count_student);
     char *text = destructure_student_into_txt(students, &count_student);
-    system("PAUSE");
 
-    write_into_file("test.txt", text);
+    write_into_file("testessss.txt", text);
     free_student(students);
     system("PAUSE");
     return 0;
