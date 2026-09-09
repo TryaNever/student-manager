@@ -35,21 +35,56 @@ void add_student(Student student, Student **students, int *count_student)
 
 char *destructure_student_into_txt(Student *students, int *count_student)
 {
-    char *data = NULL;
+    char *data = malloc(1);
+
+    if (data == NULL)
+        return NULL;
+
+    data[0] = '\0';
     for (int i = 0; i < *count_student; i++)
     {
-        int taille_ligne = snprintf(NULL, 0, "%d;%s;%s;%d;%.2f\n", students[i].id, students[i].first_name, students[i].last_name, students[i].age, students[i].average);
+        int taille_ligne = snprintf(
+            NULL,
+            0,
+            "%d;%s;%s;%d;%.2f\n",
+            students[i].id,
+            students[i].first_name,
+            students[i].last_name,
+            students[i].age,
+            students[i].average
+        );
         char *ligne = malloc(taille_ligne + 1);
 
-        snprintf(ligne, taille_ligne + 1, "%d;%s;%s;%d;%.2f\n", students[i].id, students[i].first_name, students[i].last_name, students[i].age, students[i].average);
-
-        size_t taille_actuelle = data ? strlen(data) : 0;
-        char *temp = realloc(data, taille_actuelle + taille_ligne + 1);
-        if (temp == NULL)
+        if (ligne == NULL)
+        {
+            free(data);
             return NULL;
+        }
+        snprintf(
+            ligne,
+            taille_ligne + 1,
+            "%d;%s;%s;%d;%.2f\n",
+            students[i].id,
+            students[i].first_name,
+            students[i].last_name,
+            students[i].age,
+            students[i].average
+        );
+        size_t taille_actuelle = strlen(data);
+
+        char *temp = realloc(
+            data,
+            taille_actuelle + taille_ligne + 1
+        );
+
+        if (temp == NULL)
+        {
+            free(ligne);
+            free(data);
+            return NULL;
+        }
 
         data = temp;
-
 
         strcat(data, ligne);
         free(ligne);
