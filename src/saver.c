@@ -14,8 +14,9 @@ int write_into_file(char *name_file, char *text)
         printf("Erreur lors de la création du fichier.\n");
         return 1;
     }
+    printf("%s", text);
 
-    fprintf(fp, text);
+    fprintf(fp, "%s",text);
 
     fclose(fp);
 
