@@ -94,16 +94,17 @@ void *construct_student_from_txt(Student *students, int *count_student, char *fi
     char *text = get_text_file(file_name);
     char **tokens;
 
-    tokens = str_split(text, ',');
+    tokens = str_split(text, '\n');
 
     if (tokens)
     {
         for (int i = 0; *(tokens + i); i++)
         {
+            char **tokens_student = str_split((tokens+i), ";");
             Student student;
 
-            
-            add_student(student, students):
+
+            add_student(student, students, count_student);
         }
     }
 }
