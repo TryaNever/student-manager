@@ -6,6 +6,7 @@
 #include <string.h>
 #include "saver.h"
 
+
 typedef struct
 {
     int id;
@@ -15,6 +16,8 @@ typedef struct
     float average;
 } Student;
 
+#define STUDENT_COL_COUNT 5
+
 void print_student(Student student);
 void add_student(Student student, Student **students, int *count_student);
 void remove_student(int id_student, Student **students, int *count_student);
@@ -23,5 +26,5 @@ Student *realloc_student(Student *students, int size);
 void free_student(Student *malloc_student);
 void print_array_student(Student *student, int count_student);
 char *destructure_student_into_txt(Student *students, int *count_student);
-void *construct_student_from_txt(Student *students, char *file_name);
+void *construct_student_from_txt(Student *students, int *count_student, char *file_name)
 #endif
