@@ -101,6 +101,13 @@ void *construct_student_from_txt(Student *students, int *count_student, char *fi
         for (int i = 0; *(tokens + i); i++)
         {
             char **tokens_student = str_split((tokens+i), ";");
+            for ( int index_item_student = 0; i < STUDENT_COL_COUNT; i++)
+            {
+                printf("%s", tokens_student);
+            }
+            
+
+
             Student student;
 
 
