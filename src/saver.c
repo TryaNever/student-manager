@@ -33,7 +33,7 @@ long get_size_file(char *name_file)
     return size;
 }
 
-int get_text_file(char *name_file)
+char *get_text_file(char *name_file)
 {
     FILE *fp;
     fp = fopen(name_file, "r");
@@ -42,5 +42,5 @@ int get_text_file(char *name_file)
     char *text = malloc(size_file + 1);
     fgets(text, size_file, fp);
     printf("%s", text);
-    return 0;
+    return text;
 }
