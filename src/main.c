@@ -32,10 +32,10 @@ int main()
     write_into_file("testessss.txt", text);
     free_student(students);
 
-    Student *new_student;
+    Student *new_student = NULL;
     int new_count_student = 0;
 
-    construct_student_from_txt(&new_student, &new_count_student, "testessss.txt");
+    construct_student_from_txt(new_student, &new_count_student, "testessss.txt");
 
     print_array_student(new_student, new_count_student);
     system("PAUSE");
